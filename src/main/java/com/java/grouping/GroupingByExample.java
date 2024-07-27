@@ -26,6 +26,6 @@ public class GroupingByExample {
         System.out.println("****************Printing unique student and sorted list Address Group By ********\n");
 
         System.out.println(addressGroupByUniqueAndSorted);
-        
+
     }
 }
