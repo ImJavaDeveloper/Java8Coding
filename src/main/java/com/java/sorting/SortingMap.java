@@ -13,6 +13,15 @@ public class SortingMap {
     }
 
     public static Map<Integer, String> getSortedMapByValue(Map<Integer, String> map) {
+        Comparator comparator = Comparator.comparing((Student::getName));
+
+        Comparator<Student> comparator1 = new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                return Integer.compare(o1.getRoll(), o2.getRoll());
+            }
+        };
+        Collections.sort(new ArrayList<>(), Collections.reverseOrder(comparator1));
         return map.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));

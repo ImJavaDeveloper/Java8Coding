@@ -37,8 +37,7 @@ public class FindDuplicateChars {
                 .entrySet()
                 .stream()
                 .filter(x -> x.getValue() != 1)
-                .map(Map.Entry::getKey)
-                .map(x -> String.valueOf(x.charValue()))
+                .map(x -> String.valueOf(x.getKey().charValue()))
                 .collect(Collectors.joining(","));
 
 
