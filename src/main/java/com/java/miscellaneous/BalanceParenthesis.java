@@ -2,40 +2,28 @@ package com.java.miscellaneous;
 
 import java.util.Stack;
 
+/* Program to find the balance parenthesis in the given string */
+
 public class BalanceParenthesis {
 
     public boolean isBalanceParenthesis(String str) {
 
-        Stack<Character> stack = new Stack<>();
+        Stack<Character> characters = new Stack<>();
 
-        for(int i=0;i<str.length();i++)
-        {
-            char ch = str.charAt(i);
-            if(ch=='(' || ch=='{' || ch=='[')
-            {
-                stack.push(ch);
-            }
-            else if(ch==')' || ch=='}' || ch==']')
-            {
-                if(stack.isEmpty())
-                {
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            if (c == '(' || c == '{' || c == '[') {
+                characters.push(c);
+            } else if (c == ')' || c == '}' || c == ']') {
+                if (characters.isEmpty()) {
                     return false;
                 }
-                char top = stack.pop();
-                if((ch==')' && top!='(') || (ch=='}' && top!='{') || (ch==']' && top!='['))
-                {
+                char top = characters.pop();
+                if ((c == ')' && top != '(') || (c == '}' && top != '{') || (c == ']' && top != '[')) {
                     return false;
                 }
             }
         }
-
-        if(stack.isEmpty())
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return characters.isEmpty();
     }
 }

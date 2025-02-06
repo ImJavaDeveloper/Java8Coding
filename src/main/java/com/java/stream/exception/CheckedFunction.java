@@ -1,4 +1,4 @@
-package com.java.exception;
+package com.java.stream.exception;
 
 @FunctionalInterface
 public interface CheckedFunction<T, R> {

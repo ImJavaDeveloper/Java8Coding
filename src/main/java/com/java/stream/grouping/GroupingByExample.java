@@ -1,4 +1,4 @@
-package com.java.grouping;
+package com.java.stream.grouping;
 
 import java.util.List;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.java.exception;
+package com.java.stream.exception;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,4 +1,4 @@
-import com.java.grouping.GroupingByExample;
+import com.java.stream.grouping.GroupingByExample;
 
 public class Main {
 
