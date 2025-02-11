@@ -14,7 +14,7 @@ public class StreamSet1 {
 
         //print all employees
         System.out.println("\n********** print all employees *******\n");
-        employees.stream().forEach(System.out::println);
+        employees.forEach(System.out::println);
 
         //print all employees whose salary is greater than 10000
         System.out.println("\n**********Employees whose salary is greater than 10000 *******\n");
@@ -114,5 +114,10 @@ public class StreamSet1 {
             System.out.print("Department:" + k);
             System.out.println(v.collect(Collectors.toList()));
         });
+
+        System.out.println("\n********** Use of Collectors.partitionBy *******\n");
+
+        Map<Boolean, List<Employee>> partitionBy = employees.stream().collect(Collectors.partitioningBy(employee -> employee.getSalary() > 30000));
+        partitionBy.entrySet().forEach(System.out::println);
     }
 }
